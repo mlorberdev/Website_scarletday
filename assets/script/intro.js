@@ -1,8 +1,7 @@
 export function intro() {
 
   setTimeout(() => {
-    document.getElementById("login").style.filter = "opacity(1)";
-    let phrase = ["catch up","stay on track","make waves","SCARLET DAY"]; console.log(phrase);
+    let phrase = ["catch up","stay on track","make waves","SCARLET DAY"];
     let N = 0;
     let int = setInterval(() => {
       document.getElementById("name").innerHTML = phrase[N].toUpperCase();
