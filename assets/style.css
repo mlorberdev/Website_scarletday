@@ -1,0 +1,81 @@
+@font-face {
+  font-family: poppins;
+  src: url(./Poppins-Regular.woff);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: poppins;
+}
+
+:root {
+  --scarlet: #FF2400;
+  --ww: calc(min(10vw, 10vh));
+  --bez1: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --t1: .5s;
+}
+
+body,
+html,
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--scarlet);
+}
+
+.flex {
+  display: flex
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+#name {
+  top: calc(var(--ww)/2 + 50vh + 3rem);
+  font-weight:bold;
+  color:white;
+  transition:color var(--t1) linear;
+  margin:1rem 0 .2rem 0;
+}
+#phrase {
+  color:white;
+  overflow:hidden;
+}
+#logo {
+  width: calc(var(--ww) * 1.7);
+  height: calc(var(--ww) * 1.7);
+  fill: white;
+  transform-origin: center center;
+  transform:rotate(22.5deg);
+  transition:fill var(--t1) linear;
+}
+#logo > path {
+  transform-origin: center center;
+  transition:transform 1s var(--bez1);
+}
+.intro {
+  position: absolute;
+  width: var(--ww);
+  height: var(--ww);
+  background-color: var(--scarlet);
+  border-radius:50%;
+  transition: transform .6s linear, background-color .6s var(--bez1), border-radius .6s linear;
+}
