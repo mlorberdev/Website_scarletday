@@ -11,6 +11,7 @@
 
 :root {
   --scarlet: #FF2400;
+  --blue: #272788;
   --ww: calc(min(10vw, 10vh));
   --bez1: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --t1: .5s;
@@ -27,8 +28,10 @@ html,
   overflow: hidden;
 }
 
-body {
+body,
+#intro {
   background-color: var(--scarlet);
+  transition:background-color .24s linear;
 }
 
 .flex {
@@ -49,15 +52,17 @@ body {
 }
 
 #name {
+  user-select: none;
   top: calc(var(--ww)/2 + 50vh + 3rem);
   font-weight:bold;
   color:white;
   transition:color var(--t1) linear;
   margin:1rem 0 .2rem 0;
 }
-#phrase {
+#pow {
   color:white;
-  overflow:hidden;
+  position:absolute;
+  bottom: 10%;
 }
 #logo {
   width: calc(var(--ww) * 1.7);
@@ -78,4 +83,16 @@ body {
   background-color: var(--scarlet);
   border-radius:50%;
   transition: transform .6s linear, background-color .6s var(--bez1), border-radius .6s linear;
+}
+#login {
+  cursor: pointer;
+  user-select: none;
+  position:fixed;
+  bottom:5%;
+  right:10px;
+  color:white;
+  font-weight:bold;
+  padding:.4rem 1.5rem;
+  filter:opacity(0);
+  transition:filter .24s linear;
 }
